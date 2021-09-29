@@ -93,7 +93,7 @@ set smartindent
 " backspace
 set backspace=indent,eol,start
 
-set t_Co=256
+"set t_Co=256
 
 " ASM == JDH8
 augroup jdh8_ft
@@ -297,3 +297,8 @@ autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
+
+" Disabling background color in order to use the same color as the terminal
+highlight Normal ctermbg=NONE guibg=NONE
+highlight SignColumn ctermbg=NONE guibg=NONE
+highlight LineNR ctermbg=NONE guibg=NONE
