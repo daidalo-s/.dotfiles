@@ -128,7 +128,7 @@ alias m="make"
 alias vim="nvim"
 
 #setopt CLICOLOR  # same as 'alias ls=ls -G' which I also have set
-export LSCOLORS=cxbxcxdxbxexexabagacad
+export LSCOLORS=cxexcxdxbxexexabagacad
  
 #The color designators are as follows:
 # 
