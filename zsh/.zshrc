@@ -128,10 +128,10 @@ alias m="make"
 alias vim="nvim"
 
 #setopt CLICOLOR  # same as 'alias ls=ls -G' which I also have set
-export LSCOLORS=cxexcxdxbxexexabagacad
- 
+export LSCOLORS=gxexcxdxbxexexabaggxgx
+
 #The color designators are as follows:
-# 
+#
 #a     black
 #b     red
 #c     green
@@ -163,3 +163,4 @@ export LSCOLORS=cxexcxdxbxexexabagacad
 #11.  directory writable to others, without sticky bit
 #default
 #The default is "exfxcxdxbxegedabagacad"
+[ -f "/Users/lorenzo/.ghcup/env" ] && source "/Users/lorenzo/.ghcup/env" #ghcup-env
