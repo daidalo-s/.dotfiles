@@ -76,7 +76,7 @@ function! Trim()
   let l:save = winsaveview()
   keeppatterns %s/\s\+$//e
   call winrestview(l:save)
-endfun
+endfunction
 
 command! -nargs=0 Trim call Trim()
 
