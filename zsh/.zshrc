@@ -8,7 +8,7 @@ export ZSH="/Users/lorenzo/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="lambda"
+ZSH_THEME="custom"
 DEFAULT_USER="$USER"
 
 # Non so se sia il punto giusto ma io ci provo
