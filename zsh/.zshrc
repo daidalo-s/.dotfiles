@@ -126,6 +126,8 @@ alias gap="git add -p"
 alias mc="make clean"
 alias m="make"
 alias vim="nvim"
+alias vmlaunch="multipass start"
+alias vmstop="multipass stop"
 
 #setopt CLICOLOR  # same as 'alias ls=ls -G' which I also have set
 export LSCOLORS=Dxfxcxdxbxexexabaggxgx
