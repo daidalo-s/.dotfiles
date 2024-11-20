@@ -1,13 +1,21 @@
 #!/bin/zsh
 emulate -LR zsh
 
-# This script will unStow all the dotfiles located in the ~/.dotfiles folder.
+# List of directories to be unstowed from ~/.config
+config_dirs=("nvim")
+
 echo "Unstowing Dotfiles.";
 
 for file in ~/.dotfiles/*; do
   if [ -d ${file} ]; then
-    stow  -D $(basename $file)
-    echo "$(basename $file) unstowed."; 
+    dir_name=$(basename $file)
+    if [[ " ${config_dirs[@]} " =~ " ${dir_name} " ]]; then
+      stow -D -t ~/.config $dir_name
+      echo "$dir_name unstowed from ~/.config."; 
+    else
+      stow -D $dir_name
+      echo "$dir_name unstowed from home directory."; 
+    fi
   fi
 done
 

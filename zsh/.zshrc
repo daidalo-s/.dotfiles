@@ -8,7 +8,7 @@ export ZSH="/Users/lorenzo/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="custom"
+ZSH_THEME="lambda-gister"
 DEFAULT_USER="$USER"
 
 # Non so se sia il punto giusto ma io ci provo
@@ -76,6 +76,8 @@ HIST_STAMPS="mm/dd/yyyy"
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 ZSH_DISABLE_COMPFIX=true
 source $ZSH/oh-my-zsh.sh
+source /usr/local/opt/chruby/share/chruby/chruby.sh
+source /usr/local/opt/chruby/share/chruby/auto.sh
 
 # User configuration
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -116,18 +118,17 @@ bindkey -v
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias c="clear"
 alias o="open"
-alias l="ls -ltr"
-alias lh="ls -latr"
+alias l="lsd -l"
+alias la="lsd -l -a"
 alias cdh="cd ~"
 alias gst="git status"
-alias asd="cd lorenzo.quellerba@edu.unito.it - Google Drive/My Drive/UNIVERSITÀ/AA_2020-2021/MFN-0597-ALGORITMI_E_STRUTTURE_DATI/"
-alias bd="cd lorenzo.quellerba@edu.unito.it - Google Drive/My Drive/UNIVERSITÀ/AA_2020-2021/MFN0602-BASI_DI_DATI/"
 alias gap="git add -p"
 alias mc="make clean"
 alias m="make"
 alias vim="nvim"
 alias vmlaunch="multipass start"
 alias vmstop="multipass stop"
+alias ssh="TERM=xterm-256color ssh"
 
 #setopt CLICOLOR  # same as 'alias ls=ls -G' which I also have set
 export LSCOLORS=Dxfxcxdxbxexexabaggxgx
@@ -166,3 +167,20 @@ export LSCOLORS=Dxfxcxdxbxexexabaggxgx
 #default
 #The default is "exfxcxdxbxegedabagacad"
 [ -f "/Users/lorenzo/.ghcup/env" ] && source "/Users/lorenzo/.ghcup/env" #ghcup-env
+chruby ruby-3.1.2
+export PATH="$HOME/.docker/bin:$PATH"
+# export PATH="/usr/local/opt/llvm/bin:$PATH"
+# export LLVM_DIR="/usr/local/Cellar/llvm/18.1.5/"
+eval "$(fzf --zsh)"
+export BAT_THEME=DarkNeon
+eval "$(zoxide init zsh)"
+alias cd="z"
+
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+  --color=fg:#1a6092,fg+:#d0d0d0,bg:#121212,bg+:#262626
+  --color=hl:#5f87af,hl+:#5fd7ff,info:#afaf87,marker:#87ff00
+  --color=prompt:#d7005f,spinner:#af5fff,pointer:#af5fff,header:#5e9f9f
+  --color=border:#262626,preview-fg:#7e61dd,label:#aeaeae,query:#d9d9d9
+  --border="rounded" --border-label="" --preview-window="border-rounded" --prompt="> "
+  --marker=">" --pointer="◆" --separator="-" --scrollbar="|"
+  --info="right" --preview="head -10 {+}"'
